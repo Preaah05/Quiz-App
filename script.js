@@ -55,5 +55,10 @@ function showQuestion(){
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex+1;
     questionElement.innerHtml = questionNo+". "+currentQuestion.question;
-    ///just a commit
+    currentQuestion.answers.forEach(answer=>{
+        const button = document.createElement("button");
+        button.innerHtml = answer.text;
+        button.classList.add("btn");
+        answerButton.appendChild(button);
+    })
 }
